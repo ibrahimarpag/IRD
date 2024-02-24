@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IRD.MainPage">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <Frame BackgroundColor="#9d0605" CornerRadius="0" BorderColor="#9d0605">
+            <Label Text="İnstagram Reels İndir" 
+                   TextColor="White"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"></Label>
+        </Frame>
+        <BoxView VerticalOptions="End" HeightRequest="2" BackgroundColor="Black" Color="Black" Opacity="0.2"></BoxView>
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="30,0"
+                                 VerticalOptions="Center"
+                                 Spacing="50">
+                <Grid Margin="0,10,0,0">
+                    <Ellipse Fill="#f5f5f5" 
+                             HeightRequest="156" 
+                             WidthRequest="156" 
+                             Stroke="#fff">
+                        <Ellipse.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="10,10"
+                                    Radius="40"
+                                    Opacity="0.8" />
+                        </Ellipse.Shadow>
+                    </Ellipse>
+                    <Image HeightRequest="112"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Source="logo.png"
+                           Aspect="AspectFit"/>
+                </Grid>
+
+                <Label
+            Text="Hoşgeldiniz!"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1" />
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+                    <Label Text="Linki Yapıştır" Margin="10,0,0,0"/>
+                    <Entry x:Name="entryLink" Placeholder=""></Entry>
+                    <ActivityIndicator x:Name="loader" IsVisible="false" VerticalOptions="Center" HorizontalOptions="Center" Color="Black"></ActivityIndicator>
+                    <Button x:Name="CounterBtn"
+                            BackgroundColor="#9d0605"
+                            FontAttributes="Bold"
+                            Text="Reels'i İndir" 
+                            Clicked="OnCounterClicked"
+                            HorizontalOptions="Fill" />
+                </VerticalStackLayout>
+                <HorizontalStackLayout Padding="10,10,10,25" Spacing="20" HorizontalOptions="Center" >
+                    <Grid AutomationId="https://instagram.com/web.isyerim">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CliekUrl"></TapGestureRecognizer>
+                        </Grid.GestureRecognizers>
+                        <Ellipse HeightRequest="48" WidthRequest="48" BackgroundColor="#f1f1f1">
+                            <Ellipse.Shadow>
+                                <Shadow Brush="Black"
+                                        Offset="10,10"
+                                        Radius="40"
+                                        Opacity="0.8" />
+                            </Ellipse.Shadow>
+                        </Ellipse>
+                        <Image HeightRequest="32" 
+                               Aspect="AspectFit" 
+                               Source="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png"></Image>
+                    </Grid>
+                    <Grid AutomationId="https://wa.me/+905058188767">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CliekUrl"></TapGestureRecognizer>
+                        </Grid.GestureRecognizers>
+                        <Ellipse HeightRequest="48" WidthRequest="48" BackgroundColor="#f1f1f1">
+                            <Ellipse.Shadow>
+                                <Shadow Brush="Black"
+                                         Offset="10,10"
+                                         Radius="40"
+                                         Opacity="0.8" />
+                            </Ellipse.Shadow>
+                        </Ellipse>
+                        <Image HeightRequest="32" 
+            Aspect="AspectFit" 
+            Source="https://static-00.iconduck.com/assets.00/whatsapp-icon-2038x2048-5zk5gj1j.png"></Image>
+                    </Grid>
+                    <Grid AutomationId="https://www.webisyerim.com.tr">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CliekUrl"></TapGestureRecognizer>
+                        </Grid.GestureRecognizers>
+                        <Ellipse HeightRequest="48" WidthRequest="48" BackgroundColor="#f1f1f1">
+                            <Ellipse.Shadow>
+                                <Shadow Brush="Black"
+                                         Offset="10,10"
+                                         Radius="40"
+                                         Opacity="0.8" />
+                            </Ellipse.Shadow>
+                        </Ellipse>
+                        <Image HeightRequest="32" 
+            Aspect="AspectFit" 
+            Source="https://cdn-icons-png.flaticon.com/512/3037/3037366.png"></Image>
+                    </Grid>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+        <Label Grid.Row="2" HorizontalTextAlignment="Center" Text="www.webisyerim.com.tr" TextColor="Black"></Label>
+    </Grid>
+
+</ContentPage>
